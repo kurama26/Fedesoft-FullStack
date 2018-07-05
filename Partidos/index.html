@@ -1,0 +1,55 @@
+<html ng-app="aplicacion">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="CSS/estilos.css">
+        <script src="Librerias/AngularJS/angular.min.js"></script>
+        <script src="scripts/App.js"></script>
+    </head>
+    <body>
+        <div class="titulo">Partidos</div>
+        <div ng-controller="PrincipalCtrl">
+            <div class="left">
+                <ul ng-repeat="bandera in codigopais">
+                    <li ng-if="$index%2==1">
+                            <img src="http://www.countryflags.io/{{bandera}}/flat/64.png">
+                    </li>
+                </ul>
+                <ul ng-repeat="paises in pais">
+                    <li ng-if="$index%2==1">
+                        {{paises}}
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <div>
+                    <ul ng-repeat="bandera in codigopais">
+                        <li ng-if="$index%2==0">
+                            <img src="http://www.countryflags.io/{{bandera}}/flat/64.png">
+                        </li>
+                    </ul>
+                </div>
+                <div >
+                    <ul ng-repeat="paises in pais">
+                        <li ng-if="$index%2==0">
+                            {{paises}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <table >
+                    <tr ng-repeat="bandera in codigopais">
+                        <td ng-if="$index%2==0">
+                            <img src="http://www.countryflags.io/{{bandera}}/flat/64.png">
+                        </td>
+                    </tr>
+                    <tr ng-repeat="paises in pais">
+                        <td ng-if="$index%2==0">
+                                {{paises}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
